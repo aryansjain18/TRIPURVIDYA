@@ -1,0 +1,101 @@
+body
+{
+    margin: 0;
+    padding-bottom: 105px;
+}
+section
+{
+    background-color: white;
+    margin-bottom: 30px;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+.title-container
+{
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+.main-container
+{
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-color: transparent;
+    padding: 0 30px;
+}
+.info-container
+{
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 8px;
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+}
+.info-container table
+{
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 4px;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+.info-container table th
+{
+    color: blue;
+    border-bottom: 1px solid black;
+}
+.info-container table td:last-child
+{
+    border-bottom: none;
+}
+.pay
+{
+    filter: blur(3px);
+}
+.info-container pre
+{
+    text-align: start;
+}
+.sidecolumn-container
+{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 35%;
+}
+.program-container, .output-container
+{
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
+.program-container img, .output-container img
+{
+    width: 100%;
+    border-radius: 4px;
+}
+#pay-button
+{
+    border: 1px solid black;
+    border-radius: 40%;
+    background-color: red;
+    color: white;
+    padding: 10px 40px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#pay-button:hover, #pay-button:focus
+{
+    background-color: orange;
+}
+footer section
+{
+    border-color: transparent;
+    margin-bottom: 0;
+}

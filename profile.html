@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> TRIPURAVIDYA - Settings - Profile </title>
+        <link rel="stylesheet" type="text/css" href="css/settings.css">
+        <style>
+            .container
+            {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                padding: 20px;
+            }
+            #username-display
+            {
+                font-size: 22px;
+                font-weight: normal;
+            }
+            #profilephoto
+            {
+                box-shadow: none;
+            }
+            .username-container
+            {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .profilephoto-container
+            {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 10px;
+            }
+            .update-icons
+            {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+            .profile-info
+            {
+                margin-top: 15px;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 15px 20px;
+                font-size: 18px;
+            }
+            .detail
+            {
+                display: flex;
+                justify-content: space-between;
+                padding-bottom: 20px;
+                border-bottom: 1px solid black;
+            }
+            .label
+            {
+                font-weight: 600;
+            }
+            .profile-value
+            {
+                color: gray;
+            }
+            .container-header
+            {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 15px;
+            }
+            .profile-container
+            {
+                display: block;
+                padding: 20px;
+                margin-bottom: 20px;
+                border: 1px solid lightgray;
+                border-radius: 8px;
+            }
+            .courses-container
+            {
+                display: block;
+                padding: 20px;
+                border: 1px solid lightgray;
+                border-radius: 8px;
+            }
+            .courses-container .container-header
+            {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            form
+            {
+                font-size: 18px;
+                padding: 10px;
+            }
+            .subcourse-division .course-name
+            {
+                margin-right: 20px;
+            }
+            .subcourse-division label
+            {
+                font-size: 20px;
+                margin-bottom: 10px;
+                gap: 4px;
+            }
+            .subcourse-division
+            {
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+            input[type="checkbox"]
+            {
+                margin-right: 0;
+                margin-left: 0;
+            }
+            .noaccount-buttons
+            {
+                display: flex;
+                gap: 10px;
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <header class="settings-container">
+            <h2 class="heading"> Settings </h2>
+            <form>
+                <input type="search" name="search" id="search" placeholder="Search Settings">
+            </form>
+            <ul>
+                <li style="background-color: lightgray; border-radius: 4px;"> <a href="profile.html" target="_self"> <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.bJpr9jpclIkXQT-hkkb1KQHaHa%3Fpid%3DApi&f=1&ipt=99411bbcbea5039044259eb2aa7c8f97dff7c34c372a067aa8aeb145e5024650&ipo=images"> Profile </a> </li>
+                <li> <a href="password.html" target="_self"> <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%2Fid%2FOIP.zbI6Pnvpz3JmcXxEY0CPHgHaHa%3Fpid%3DApi&f=1&ipt=0e82aba2d8b8e6e1e86491a8567495342fea767b6e71788cfb0b6f975c974b8b&ipo=images"> Password </a> </li>
+                <li> <a href="appearance.html" target="_self"> <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%2Fid%2FOIP.B7tsaS4e1o9w28ewiWlvNgHaHa%3Fpid%3DApi&f=1&ipt=38e46b3f42b6afcb839524b85e70ad6400a3d6b9926f3d04cf5d1b46e3d7d0f6&ipo=images"> Appearance </a> </li>
+                <li> <a href="reset.html" target="_self"> <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.yZoDGitVuS1HHxCn1iJy0gHaHa%3Fpid%3DApi&f=1&ipt=ecf24811988edd43d929cd40e5e691e4b4a4dabe2cc8a14668c8263073f07d95&ipo=images"> Restore Settings </a> </li>
+            </ul>
+        </header>
+        <a href="home.html" target="_self" style="position: absolute; top: 0px; left: 5px; font-weight: lighter;"> ✖ </a>
+        <main>
+            <h2 class="subheading"> Profile </h2>
+            <section class="container">
+                <div class="username-container">
+                    <div id="username-display"></div>
+                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.P675S_SlbWOKfTMvU_SODgHaHa%3Fpid%3DApi&f=1&ipt=0ee7f8d54a90976f056152fac19bd1bf782e88418a76541388db8c589e933652&ipo=images" class="edit-icon" onclick="changename()">
+                    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.-krCIPJCLQdvGv_oKDohcQHaHa%3Fpid%3DApi&f=1&ipt=ea31478b71873e16e7b68d5311ad3124b04557107989fd9d4ce57907f1b64622&ipo=images" class="delete-icon" onclick="deletename()">
+                    <div class="noaccount-buttons">
+                        <input type="button" onclick="window.location.href='signup.html'" value="Signup" id="signup">
+                        <input type="button" onclick="window.location.href='login.html'" value="Login" id="login">
+                    </div>
+                </div>
+                <div class="profilephoto-container">
+                    <img src="images/profilephoto1.jpg" id="profilephoto">
+                    <div class="update-icons">
+                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.P675S_SlbWOKfTMvU_SODgHaHa%3Fpid%3DApi&f=1&ipt=0ee7f8d54a90976f056152fac19bd1bf782e88418a76541388db8c589e933652&ipo=images" class="edit-icon" onclick="changephoto()">
+                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.-krCIPJCLQdvGv_oKDohcQHaHa%3Fpid%3DApi&f=1&ipt=ea31478b71873e16e7b68d5311ad3124b04557107989fd9d4ce57907f1b64622&ipo=images" class="delete-icon" onclick="deletephoto()">
+                    </div>
+                </div>
+            </section>
+            <section class="profile-container">
+                <div class="container-header">
+                    <h2 class="subheading"> Profile Information </h2>
+                    <div class="update-icons">
+                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.P675S_SlbWOKfTMvU_SODgHaHa%3Fpid%3DApi&f=1&ipt=0ee7f8d54a90976f056152fac19bd1bf782e88418a76541388db8c589e933652&ipo=images" class="edit-icon" onclick="changeemail()">
+                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.-krCIPJCLQdvGv_oKDohcQHaHa%3Fpid%3DApi&f=1&ipt=ea31478b71873e16e7b68d5311ad3124b04557107989fd9d4ce57907f1b64622&ipo=images" class="delete-icon" onclick="deleteemail()">
+                    </div>
+                </div>
+                <div class="profile-info">
+                    <div class="detail">
+                        <span class="label"> Email </span>
+                        <span id="email" class="profile-value"></span>
+                    </div>
+                    <div class="detail">
+                        <span class="label"> Gender </span>
+                        <span id="gender" class="profile-value"></span>
+                    </div>
+                    <div class="detail">
+                        <span class="label"> Age </span>
+                        <span id="age" class="profile-value"></span>
+                    </div>
+                    <div class="detail">
+                        <span class="label"> Course </span>
+                        <span id="course" class="profile-value"></span>
+                    </div>
+                </div>
+            </section>
+            <section class="courses-container">
+                <div class="container-header">
+                    <h2 class="subheading"> Subcourses </h2>
+                </div>
+                <div class="subcourses-container">
+                    <form id="subcourses-form">
+                        <div class="subcourse-division">
+                            <label for="coding" class="course-name"> Coding - </label> 
+                            <label><input type="checkbox" name="coding" value="C" id="c">C</label>
+                            <label><input type="checkbox" name="coding" value="C++" id="cpp">C++</label>
+                            <label><input type="checkbox" name="coding" value="Python" id="python">Python</label>
+                            <label><input type="checkbox" name="coding" value="Java" id="java">Java</label>
+                        </div>
+                        <div class="subcourse-division">
+                            <label for="web" class="course-name"> Website Development - </label> 
+                            <label><input type="checkbox" name="web" value="HTML" id="html">HTML</label>
+                            <label><input type="checkbox" name="web" value="CSS" id="css">CSS</label>
+                            <label><input type="checkbox" name="web" value="JavaScript" id="js">JavaScript</label>
+                        </div>
+                        <div class="subcourse-division">
+                        <label for="maths" class="course-name"> Mathematics - </label> 
+                            <label><input type="checkbox" name="maths" value="Set Theory" id="sets">Set Theory</label>
+                            <label><input type="checkbox" name="maths" value="Propositional Logic" id="pl">Propositional Logic</label>
+                            <label><input type="checkbox" name="maths" value="Relations & Functions" id="rf">Relations & Functions</label>
+                        </div>
+                        <input type="submit" value="Submit" style="display: flex; justify-self: flex-start;">
+                    </form>
+                </div>
+            </section>
+        </main>
+        <script>
+            let profile, name, email, gender, age, course, subcourses, photo, display, login, signup;
+            document.addEventListener("DOMContentLoaded", function()
+            {
+                profile=localStorage.getItem("profile");
+                profile=profile? JSON.parse(profile): null;
+                name = profile && profile.name ? profile.name : "Guest";
+                email = profile && profile.email ? profile.email : "—";
+                gender = profile && profile.gender ? profile.gender : "—";
+                age = profile && profile.age ? profile.age : "—";
+                course = profile && profile.course ? profile.course : "—";
+                subcourses = profile && Array.isArray(profile.subcourses) ? profile.subcourses : [];
+                display=document.getElementById("username-display");
+                login=document.getElementById("login");
+                signup=document.getElementById("signup");
+                photo=document.getElementById("profilephoto");
+                display.innerText=name;
+                document.getElementById("email").innerText=email;
+                document.getElementById("gender").innerText=gender;
+                document.getElementById("age").innerText=age;
+                document.getElementById("course").innerText=course;
+                if(name!=="Guest")
+                {
+                    login.style.display="none";
+                    signup.style.display="none";
+                }
+                else
+                {
+                    login.style.display="inline-block";
+                    signup.style.display="inline-block";
+                }
+                const url=localStorage.getItem("profile-photo");
+                if(url && url.trim()!=="")
+                    photo.src=url;
+                if(Array.isArray(subcourses))
+                    subcourses.forEach(subcourse=>
+                    {
+                        const checkbox=document.querySelector(`input[value="${subcourse}"]`);
+                        if(checkbox)
+                            checkbox.checked=true;
+                    });
+            });
+            const form=document.getElementById("subcourses-form");
+            form.addEventListener("submit", function(event)
+            {
+                event.preventDefault();
+                profile=localStorage.getItem("profile");
+                profile=profile? JSON.parse(profile): null;
+                let subcourses=Array.from(form.querySelectorAll("input[type='checkbox']:checked")).map(checked=>checked.value);
+                profile.subcourses=subcourses;
+                localStorage.setItem("profile", JSON.stringify(profile));
+                window.location.href="home.html";
+            });
+            function changephoto()
+            {
+                let url=prompt("Image URL: ");
+                if (!url || url.trim() === "")
+                {
+                    alert("Error changing profile photo.");
+                    return;
+                }
+                let confirm=prompt("Enter CONFIRM to continue.");
+                if(confirm==="CONFIRM")
+                {
+                    localStorage.setItem("profile-photo", url);
+                    document.getElementById("profilephoto").src=url;
+                }
+                else
+                {
+                    alert("Failed to change profile photo.");
+                }
+            }
+            function deletephoto()
+            {
+                let confirm=prompt("Enter CONFIRM to continue.");
+                if(confirm==="CONFIRM")
+                {
+                    photo.src="images/profilephoto1.jpg";
+                    localStorage.removeItem("profile-photo");
+                }
+            }
+            function changeemail()
+            {
+                let mail=prompt("New Email ID: ");
+                let confirm=prompt("Enter CONFIRM to continue.");
+                if(confirm==="CONFIRM")
+                {
+                    document.getElementById("email").innerText=mail;
+                    profile.email=mail;
+                    localStorage.setItem("profile", JSON.stringify(profile));
+                }
+            }
+            function deleteemail()
+            {
+                let confirm=prompt("Enter CONFIRM to continue.");
+                if(confirm==="CONFIRM")
+                {
+                    document.getElementById("email").innerText="—";
+                    profile.email="—";
+                    localStorage.setItem("profile", JSON.stringify(profile));
+                }
+            }
+            function changename()
+            {
+                let name2=prompt("New name: ");
+                let confirm=prompt("Enter CONFIRM to continue.");
+                if(confirm==="CONFIRM")
+                {
+                    name=name2;
+                    profile.name=name2;
+                    localStorage.setItem("profile", JSON.stringify(profile));
+                    display.innerText=name2;
+                }
+            }
+            function deletename()
+            {
+                let confirm=prompt("Enter CONFIRM to continue.");
+                if(confirm==="CONFIRM")
+                {
+                    name="Guest";
+                    profile.name=name;
+                    localStorage.setItem("profile", JSON.stringify(profile));
+                    display.innerText=name;
+                    login.style.display="inline-block";
+                    signup.style.display="inline-block";
+                }
+            }
+        </script>
+    </body>
+</html>

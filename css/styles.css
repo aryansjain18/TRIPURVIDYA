@@ -1,0 +1,285 @@
+*
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-top: none;
+    border-bottom: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    color: black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+}
+header .logo
+{
+    margin-left: 10px;
+    height: 100px;
+    border-radius: 10px;
+}
+#profilephoto, #settingsicon
+{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    top: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    border-style: none;
+}
+header nav
+{
+    margin-right: 10px;
+}
+header nav ul
+{
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+header nav ul li
+{
+    position: relative;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+header nav a
+{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    color: black;
+    text-decoration: none;
+    font-size: 22px;
+}
+header nav a:hover
+{
+    text-decoration: underline;
+}
+.nav-drop::after
+{
+    content: "▼";
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 6px;
+}
+.nav-dropdown
+{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 10px 0;
+    min-width: 160px;
+}
+.nav-dropdown ul li a
+{
+    font-size: 16px;
+}
+.profile-dropdown
+{
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 10px 0;
+    min-width: 250px;
+}
+.profile-dropdown a
+{
+    font-size: 16px;
+}
+#username-display
+{
+    font-size: 16px;
+}
+.nav-drop:hover .nav-dropdown, .nav-drop:hover .profile-dropdown
+{
+    display: block;
+}
+.nav-dropdown li:hover, .profile-dropdown li:hover, #username-display:hover
+{
+    background-color: gold;
+    color: white;
+    border-radius: 5px;
+}
+.nav-2nd-drop::after
+{
+    content: "▸";
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 6px;
+}
+.nav-2nd-dropdown
+{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 10px 0;
+    min-width: 200px;
+}
+.nav-2nd-drop:hover .nav-2nd-dropdown
+{
+    display: block;
+}
+footer
+{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 2px solid black;
+    padding: 10px;
+    background-color: white;
+    color: black;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+footer a
+{
+    text-decoration: none;
+    color: black;
+}
+footer img
+{
+    padding: 5px;
+    margin: 5px;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+}
+.footer-container
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.media
+{
+    display: flex;
+}
+.media p, .contacts p
+{
+    margin: 5px 0;
+}
+.contacts
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.contact-details
+{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.contact-details a
+{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+}
+.contact-details img
+{
+    margin-right: 5px;
+}
+#copyright
+{
+    align-self: flex-start;
+    margin-top: 10px;
+    text-align: left;;
+    font-size: 12px;
+}
+body
+{
+    background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%2Fid%2FOIP.YbbxxABEI4rJ5RkX4jrc6AHaEJ%3Fpid%3DApi&f=1&ipt=57ee2e16f7e4ad4b771b8f4503739a117dd6fd98b4ff81510d3d4009c3889301&ipo=images");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding-bottom: 130px;
+}
+.space
+{
+    background-color: transparent;
+    height: 300px;
+}
+.container
+{
+    margin: 30px auto;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    padding: 10px;
+    text-align: center;
+    max-width: 100%;
+}
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+
+  .card {
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
+@media (max-width: 1024px) {
+  .container {
+    width: 90%;
+  }
+
+  nav a {
+    padding: 10px;
+  }
+}

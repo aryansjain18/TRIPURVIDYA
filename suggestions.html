@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> TRIPURAVIDYA - Course Suggestions </title>
+        <link rel="stylesheet" type="text/css" href="css/signin.css">
+        <style>
+            body
+            {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                margin: 0;
+            }
+            .container
+            {
+                width: 850px;
+                text-align: center;
+                padding: 40px;
+                box-sizing: border-box;
+            }
+            .grid
+            {
+                display: grid;
+                justify-items: center;
+                gap: 10px;
+                grid-template-columns: repeat(3, 1fr);
+                align-items: center;
+            }
+            .grid:first-of-type
+            {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
+            .grid p
+            {
+                margin: 0;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+            input[type="submit"]
+            {
+                margin-top: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="container">
+            <header>
+                <a href="home.html" target="_self"> <img src="images/logo_deepai.png"  alt="TRIPURAVIDYA" class="logo"> </a>
+                <h2 style="text-align: center; color: gold;"> Course Suggestions </h2>
+            </header>
+            <main>
+                <form>
+                    <div class="grid">
+                        <p id="c-row">
+                            <input type="checkbox" name="coding" value="C" id="c"> C
+                        </p>
+                    </div>
+                    <div class="grid">
+                        <p id="cpp-row">
+                            <input type="checkbox" name="coding" value="C++" id="cpp"> C++
+                        </p>
+                        <p id="python-row">
+                            <input type="checkbox" name="coding" value="Python" id="python"> Python
+                        </p>
+                        <p id="java-row">
+                            <input type="checkbox" name="coding" value="Java" id="java"> Java
+                        </p>
+                    </div>
+                    <div class="grid">
+                        <p id="html-row">
+                            <input type="checkbox" name="web" value="HTML" id="html"> HTML
+                        </p>
+                        <p id="css-row">
+                            <input type="checkbox" name="web" value="CSS" id="css"> CSS
+                        </p>
+                        <p id="js-row">
+                            <input type="checkbox" name="web" value="JavaScript" id="js"> JavaScript
+                        </p>
+                    </div>
+                    <div class="grid">
+                        <p id="sets-row">
+                            <input type="checkbox" name="maths" value="Set Theory" id="sets"> Set Theory
+                        </p>
+                        <p id="pl-row">
+                            <input type="checkbox" name="maths" value="Propositional Logic" id="pl"> Propositional Logic
+                        </p>
+                        <p id="rf-row">
+                            <input type="checkbox" name="maths" value="Relations & Functions" id="rf"> Relations & Functions
+                        </p>
+                    </div>
+                    <input type="submit" value="Submit">
+                    <p style="color: red; font-size: 16px;"> You may change the courses later. </p>
+                </form>
+            </main>
+        </section>
+        <script>
+            let options;
+            document.addEventListener("DOMContentLoaded", function()
+            {
+                let profile=localStorage.getItem("profile");
+                profile=profile? JSON.parse(profile): null;
+                options=document.querySelectorAll("input[type='checkbox']");
+                if(profile.course==="BTech")
+                {
+                    document.getElementById("cpp-row").style.display="none";
+                    document.getElementById("java-row").style.display="none";
+                    document.getElementById("python-row").style.display="none";
+                }
+                else if(profile.course==="MTech")
+                {
+                    document.getElementById("c-row").style.display="none";
+                    document.getElementById("html-row").style.display="none";
+                    document.getElementById("css-row").style.display="none";
+                    document.getElementById("js-row").style.display="none";
+                    document.getElementById("sets-row").style.display="none";
+                    document.getElementById("pl-row").style.display="none";
+                    document.getElementById("rf-row").style.display="none";
+                }
+            });
+            document.querySelector("form").addEventListener("submit", function(event)
+            {
+                event.preventDefault();
+                let subcourses=[];
+                for(let option=0; option<options.length; option++)
+                    if(options[option].checked)
+                        subcourses.push(options[option].value);
+                let profile=localStorage.getItem("profile");
+                profile=profile? JSON.parse(profile): null;
+                profile.subcourses=subcourses;
+                localStorage.setItem("profile", JSON.stringify(profile));
+                window.location.href="home.html";
+            });
+        </script>
+    </body>
+</html>

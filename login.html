@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> TRIPURAVIDYA - Login </title>
+        <link rel="stylesheet" type="text/css" href="css/signin.css">
+        <style>
+            .container
+            {
+                margin: 200px 480px;
+            }
+            .password-dropdown
+            {
+                width: 350px;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="container">
+            <header>
+                <a href="home.html" target="_self"> <img src="images/logo_deepai.png"  alt="TRIPURAVIDYA" class="logo"> </a>
+                <h2 style="text-align: center; color: gold;"> Login </h2>
+            </header>
+            <main>
+                <form id="profile-signin">
+                    <input type="text" name="name" id="name" placeholder="Name" maxlength="30"> <br>
+                    <input type="email" name="email" id="email" placeholder="Email" required> <br>
+                    <div class="password-container">
+                        <div class="conditions-container">
+                            <input type="password" name="password" id="password" class="password" placeholder="Password" required>
+                            <ul class="password-dropdown" id="rules-password">
+                                <li id="length" class="invalid"> Password must have at least 8 characters. </li>
+                                <li id="upper" class="invalid"> Password must have at least 1 upper-case letter. </li>
+                                <li id="lower" class="invalid"> Password must have at least 1 lower-case letter. </li>
+                                <li id="digit" class="invalid"> Password must have at least 1 digit. </li>
+                                <li id="special" class="invalid"> Password must have at least 1 special character. </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br><input type="submit" value="Submit"> <br>
+                    <input type="reset" value="Reset">
+                </form>
+                <script>
+                    const form=document.getElementById("profile-signin");
+                    const name=document.getElementById("name");
+                    const email=document.getElementById("email");
+                    const password=document.getElementById("password");
+                    const rules=document.getElementById("rules-password");
+                    const rule={
+                        length: document.getElementById("length"),
+                        upper: document.getElementById("upper"),
+                        lower: document.getElementById("lower"),
+                        digit: document.getElementById("digit"),
+                        special: document.getElementById("special")
+                    }
+                    password.addEventListener("input", function()
+                    {
+                        var value=password.value;
+                        switchRules(rule.length, value.length>=8);
+                        switchRules(rule.upper, /[A-Z]/.test(value));
+                        switchRules(rule.lower, /[a-z]/.test(value));
+                        switchRules(rule.digit, /[0-9]/.test(value));
+                        switchRules(rule.special, /[^A-Za-z0-9]/.test(value));
+                    });
+                    function switchRules(element, condition)
+                    {
+                        if(rules.matches(":hover"))return;
+                        if(condition)
+                        {
+                            element.classList.add("valid");
+                            element.classList.remove("invalid");
+                        }
+                        else
+                        {
+                            element.classList.remove("valid");
+                            element.classList.add("invalid");
+                        }
+                    }
+                    form.addEventListener("submit", function(event)
+                    {
+                        event.preventDefault();
+                        const profile={
+                            name: name.value,
+                            email: email.value,
+                            password: password.value
+                        };
+                        localStorage.setItem("profile", JSON.stringify(profile));
+                        window.location.href="home.html";
+                    });
+                </script>
+            </main>
+        </section>
+    </body>
+</html>

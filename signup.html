@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title> TRIPURAVIDYA - Signup </title>
+        <link rel="stylesheet" type="text/css" href="css/signin.css">
+        <style>
+            .container
+            {
+                margin: 100px 480px;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="container">
+            <header>
+                <a href="home.html" target="_self"> <img src="images/logo_deepai.png"  alt="TRIPURAVIDYA" class="logo"> </a>
+                <h2 style="text-align: center; color: gold;"> Signup </h2>
+            </header>
+            <main>
+                <form id="profile-signin">
+                    <input type="text" name="name" id="name" maxlength="30" placeholder="Name" required> <br>
+                    <label for="gender"> Gender - </label>
+                        <input type="radio" name="gender" value="Male" id="male" required> Male 
+                        <input type="radio" name="gender" value="Female" id="female" required> Female 
+                        <input type="radio" name="gender" value="others" id="others" required> Others 
+                    <br> 
+                    <input type="number" name="age" id="age" placeholder="Age" required> <br>
+                    <input type="email" name="email" id="email" placeholder="Email" required> <br>
+                    <select id="course" name="course" required>
+                        <option value="" selected> Course </option>
+                        <option value="BTech"> BTech </option>
+                        <option value="MTech"> MTech </option>
+                    </select>
+                    <div class="password-container">
+                        <div class="conditions-container">
+                            <input type="password" name="password" id="password" class="password" placeholder="Create Password" required>
+                            <ul class="password-dropdown" id="rules-password">
+                                <li id="length" class="invalid"> Password must have at least 8 characters. </li>
+                                <li id="upper" class="invalid"> Password must have at least 1 upper-case letter. </li>
+                                <li id="lower" class="invalid"> Password must have at least 1 lower-case letter. </li>
+                                <li id="digit" class="invalid"> Password must have at least 1 digit. </li>
+                                <li id="special" class="invalid"> Password must have at least 1 special character. </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="password-container">
+                        <div class="conditions-container">
+                            <input type="password" name="confirm-password" id="confirm" class="password" placeholder="Confirm Password" required>
+                            <ul class="password-dropdown" id="rule-match">
+                                <li id="match" class="invalid"> Password must match the original password. </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br><input type="submit" value="Submit"> <br>
+                    <input type="reset" value="Reset">
+                </form>
+                <script src="js/password-conditions.js"></script>
+            </main>
+        </section>
+    </body>
+</html>

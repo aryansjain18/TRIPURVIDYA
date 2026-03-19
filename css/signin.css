@@ -1,0 +1,145 @@
+*
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+body
+{
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+.container
+{
+    background-color: white;
+    width: 500px;
+    text-align: center;
+    color: black;
+    border: 2px solid black;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #bbb;
+    font-size: 22px;
+}
+header .logo
+{
+    height: 100px;
+    padding: 10px;
+}
+input, select
+{
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+input[type="text"], input[type="email"], input[type="submit"], input[type="reset"]
+{
+    width: 70%;
+    box-shadow: 0 0 5px black;
+}
+select
+{
+    width: 75%;
+    box-shadow: 0 0 5px black;
+}
+input[type="password"], input[type="number"]
+{
+    box-shadow: 0 0 5px black;
+    width: 70%;
+}
+input[type="submit"], input[type="reset"]
+{
+    background-color: blue;
+    color: white;
+}
+input[type="submit"]:hover, input[type="reset"]:hover
+{
+    background-color: gold;
+    color: white;
+}
+.password-dropdown
+{
+    display: none;
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px 0;
+    border-radius: 6px;
+    width: 75%;
+    z-index: 10;
+    transition: 0.2s ease;
+    position: absolute;
+    top: 35%;
+    left: 12.5%;
+}
+.password-dropdown ul
+{
+    margin: 0;
+    padding-left: 25px;
+}
+.password-dropdown li
+{
+    list-style-type: none;
+    margin: 6px 0;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.password-dropdown:hover .invalid
+{
+    color: black;
+}
+.password-dropdown:hover .invalid::before
+{
+    content: "•";
+    color: black;
+}
+.invalid
+{
+    color: red;
+}
+.invalid::before
+{
+    content: "✖ ";
+    color: red;
+}
+.valid
+{
+    color: green;
+}
+.valid::before
+{
+    content: "✔ ";
+    color: green;
+}
+.password-container
+{
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    position: relative;
+}
+.conditions-container
+{
+    position: relative;
+}
+.password-container, .conditions-container
+{
+    display: block;
+    width: 100%;
+}
+.password:hover + .password-dropdown, .password:focus + .password-dropdown
+{
+    display: block;
+}
+@media (max-width: 600px) {
+  .form-box {
+    width: 100%;
+    padding: 20px;
+  }
+
+  input {
+    font-size: 14px;
+  }
+}
